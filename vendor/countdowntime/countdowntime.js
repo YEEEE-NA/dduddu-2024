@@ -13,6 +13,11 @@
         const diffMin = Math.floor((diff / (1000*60)) % 60);
         const diffSec = Math.floor(diff / 1000 % 60);
 
+        console.log("## diffDay: " + diffDay)
+        console.log("## diffHour: " + diffHour)
+        console.log("## diffMin: " + diffMin)
+        console.log("## diffSec: " + diffSec)
+
         var defaults = {
           timeZone: "",
           endtimeYear: 0,
@@ -37,6 +42,10 @@
           var endMinutes = options.endtimeMinutes;
           var endSeconds = options.endtimeSeconds;
 
+          console.log("## endHours: " + endHours)
+          console.log("## endMinutes: " + endMinutes)
+          console.log("## endSeconds: " + endSeconds)
+
           if(tZ == "") {
             var deadline = new Date(endYear, endMonth - 1, endDate, endHours, endMinutes, endSeconds);
           } 
@@ -45,7 +54,8 @@
           }
 
           if(Date.parse(deadline) < Date.parse(timeNow)) {
-            var deadline = new Date(Date.parse(new Date()) + endDate * 24 * 60 * 60 * 1000 + endHours * 60 * 60 * 1000); 
+            var deadline = new Date(Date.parse(new Date()) + endDate * 24 * 60 * 60 * 1000 + endHours * 60 * 60 * 1000 + endMinutes * 60 * 1000 + endSeconds * 1000);
+            console.log(deadline)
           }
           
           
