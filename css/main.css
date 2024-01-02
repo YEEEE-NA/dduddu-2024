@@ -408,6 +408,9 @@ Primary use:
 /*//////////////////////////////////////////////////////////////////
 [ SSM ]*/
 @media (max-width: 480px) {
+  /*#ci-hero-11 .widget-wrap , #ci-hero-12 .widget-wrap {*/
+  /*  background-attachment: initial;*/
+  /*}*/
   .m-0-ssm {margin: 0;}
   .m-lr-0-ssm {margin-left: 0; margin-right: 0;}
   .m-lr-15-ssm {margin-left: 15px; margin-right: 15px;}
