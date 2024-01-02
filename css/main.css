@@ -71,7 +71,7 @@ Primary use:
 }
 
 .simpleslide100-item {
-  display: block;
+  display: inline;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -178,7 +178,6 @@ Primary use:
   /*background-size: auto 100%;*/
   -webkit-background-size: cover;
   background-size: cover;
-  background-attachment: fixed !important;
 }
 
 
