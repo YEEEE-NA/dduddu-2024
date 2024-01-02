@@ -28,22 +28,14 @@
 </head>
 <body>
 
-	<div class="container">
-		<div class="bg-img1"></div>
-		<div class="dim">
-			<div class="content"></div>
-		</div>
+
+	<div class="simpleslide100">
+		<div class="simpleslide100-item bg-img1" style="background-image: url('images/1.jpeg');"></div>
+		<div class="simpleslide100-item bg-img1" style="background-image: url('images/2.jpeg');"></div>
+		<div class="simpleslide100-item bg-img1" style="background-image: url('images/3.jpeg');"></div>
+		<div class="simpleslide100-item bg-img1" style="background-image: url('images/4.jpeg'); background-size: contain"></div>
+		<div class="simpleslide100-item bg-img1" style="background-image: url('images/5.jpeg'); background-size: contain"></div>
 	</div>
-
-
-<!--  -->
-<!--	<div class="simpleslide100">-->
-<!--		<div class="simpleslide100-item bg-img1" style="background-image: url('images/1.jpeg');"></div>-->
-<!--		<div class="simpleslide100-item bg-img1" style="background-image: url('images/2.jpeg');"></div>-->
-<!--		<div class="simpleslide100-item bg-img1" style="background-image: url('images/3.jpeg');"></div>-->
-<!--		<div class="simpleslide100-item bg-img1" style="background-image: url('images/4.jpeg'); background-size: contain"></div>-->
-<!--		<div class="simpleslide100-item bg-img1" style="background-image: url('images/5.jpeg'); background-size: contain"></div>-->
-<!--	</div>-->
 
 	<div class="size1">
 		<!--  -->
@@ -105,6 +97,10 @@
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<script>
+		$(document).scroll(function() {
+			$('#background').css('background-position', '0px ' + $(document).scrollTop() + 'px');
+		});
+
 		$('.cd100').countdown100({
 			timeZone: ""
 			// ex:  timeZone: "America/New_York"

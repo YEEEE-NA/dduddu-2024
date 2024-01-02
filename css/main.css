@@ -166,24 +166,20 @@ Primary use:
 [ Height ]*/
 
 
-
-
 /*//////////////////////////////////////////////////////////////////
 [ Background ]*/
 .bg0 {background-color: black;}
 
-.bg-img2 {
+.bg-img1 {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   /*background-size: auto 100%;*/
   background-size: cover;
-  transform: translateZ(0);
-  will-change: transform;
 }
 
-.bg-img1 {
-  background-image: url('../images/1.jpeg');
+.bg-img2 {
+  background-image: url('../images/2.jpeg');
   position: fixed;
   top: 0;
   left: 0;
