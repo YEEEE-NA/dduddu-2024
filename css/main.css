@@ -191,8 +191,11 @@ Primary use:
 /*==================================================================
    WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE WHERE  
 ==================================================================*/
+/*.where1 {*/
+/*  align-self: flex-start;*/
+/*}*/
 .where1 {
-  align-self: flex-start;
+  align-self: flex-end;
 }
 
 
@@ -208,7 +211,7 @@ Primary use:
 
 /*---------------------------------------------*/
 .overlay1 {
-  position: absolute;
+  position: fixed;
   z-index: 1;
 }
 /*.overlay1::before {*/
