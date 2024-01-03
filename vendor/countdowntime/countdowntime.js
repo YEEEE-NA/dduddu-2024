@@ -4,7 +4,7 @@
     $.fn.extend({ 
 
       countdown100: function(options) {
-        const masTime = new Date("2024-02-01");
+        const masTime = new Date("2024/02/01");
         const todayTime = new Date();
         const diff = masTime - todayTime;
 
