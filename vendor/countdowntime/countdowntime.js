@@ -4,24 +4,21 @@
     $.fn.extend({ 
 
       countdown100: function(options) {
-        const masTime = new Date("2024/02/01");
+        const dTime = new Date('2024-02-03 15:49:00');
         const todayTime = new Date();
-        const diff = masTime - todayTime;
+        const diff = todayTime - dTime;
 
+        const diffYear = 0;
+        const diffMonth = 0;
         const diffDay = Math.floor(diff / (1000*60*60*24));
         const diffHour = Math.floor((diff / (1000*60*60)) % 24);
         const diffMin = Math.floor((diff / (1000*60)) % 60);
         const diffSec = Math.floor(diff / 1000 % 60);
 
-        console.log("## diffDay: " + diffDay)
-        console.log("## diffHour: " + diffHour)
-        console.log("## diffMin: " + diffMin)
-        console.log("## diffSec: " + diffSec)
-
         var defaults = {
           timeZone: "",
-          endtimeYear: 0,
-          endtimeMonth: 0,
+          endtimeYear: diffYear,
+          endtimeMonth: diffMonth,
           endtimeDate: diffDay,
           endtimeHours: diffHour,
           endtimeMinutes: diffMin,
@@ -42,10 +39,6 @@
           var endMinutes = options.endtimeMinutes;
           var endSeconds = options.endtimeSeconds;
 
-          console.log("## endHours: " + endHours)
-          console.log("## endMinutes: " + endMinutes)
-          console.log("## endSeconds: " + endSeconds)
-
           if(tZ == "") {
             var deadline = new Date(endYear, endMonth - 1, endDate, endHours, endMinutes, endSeconds);
           } 
@@ -55,14 +48,13 @@
 
           if(Date.parse(deadline) < Date.parse(timeNow)) {
             var deadline = new Date(Date.parse(new Date()) + endDate * 24 * 60 * 60 * 1000 + endHours * 60 * 60 * 1000 + endMinutes * 60 * 1000 + endSeconds * 1000);
-            console.log(deadline)
           }
           
           
-          initializeClock(deadline);
+          initializeClock(dTime);
 
-          function getTimeRemaining(endtime) { 
-            var t = Date.parse(endtime) - Date.parse(new Date());
+          function getTimeRemaining(dTime) {
+            var t = Date.parse(new Date()) - Date.parse(dTime);
             var seconds = Math.floor((t / 1000) % 60);
             var minutes = Math.floor((t / 1000 / 60) % 60);
             var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
@@ -76,23 +68,24 @@
             };
           }
 
-          function initializeClock(endtime) { 
+          function initializeClock(dTime) {
             var daysSpan = $(obj).find('.days');
             var hoursSpan = $(obj).find('.hours');
             var minutesSpan = $(obj).find('.minutes');
             var secondsSpan = $(obj).find('.seconds');
 
             function updateClock() { 
-              var t = getTimeRemaining(endtime);
+              var t = getTimeRemaining(dTime);
 
               daysSpan.html(t.days);
               hoursSpan.html(('0' + t.hours).slice(-2));
               minutesSpan.html(('0' + t.minutes).slice(-2));
               secondsSpan.html(('0' + t.seconds).slice(-2))
 
-              if (t.total <= 0) {
-                clearInterval(timeinterval);
-              }
+
+              // if (t.total <= 0) {
+              //   clearInterval(timeinterval);
+              // }
             }
 
             updateClock();
